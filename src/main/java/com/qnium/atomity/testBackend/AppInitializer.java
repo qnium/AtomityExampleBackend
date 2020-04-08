@@ -52,6 +52,7 @@ public class AppInitializer implements ServletContextListener
         {
             registerOrmLiteTypes();
             ServletContext config = sce.getServletContext();
+            Logger.log.info(String.format("Current config: %s", config.getInitParameter("currentConfig")));
             ConfigManager cm = ConfigManager.getInstance();
             cm.setDatabaseDriverName(config.getInitParameter("databaseDriverName"));
             cm.setDatabaseURL(config.getInitParameter("databaseURL"));
